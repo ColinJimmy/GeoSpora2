@@ -1,62 +1,44 @@
-# WEATHER APP
+  Geospora is an innovative platform designed to empower farmers by providing them access to NASA Earth observation datasets, enabling data-driven decisions to tackle water-related agricultural challenges. From unpredictable weather to pests and diseases, farmers face significant threats to crop health and food security. Geospora offers an intuitive tool to help farmers explore, analyze, and utilize data to address these concerns and optimize their farming practices.
 
-### Description
+Mission
+The mission of Geospora is to bridge the gap between cutting-edge NASA datasets and farmers on the ground, giving them the tools they need to make informed decisions that enhance crop resilience, boost yields, and secure profits.
 
-A web-based weather app created with React JavaScript library. It has integration with Google Maps, Google Places and OpenWeatherMap.
+Problem Statement
+Farmers face a deluge of water-related challenges stemming from unpredictable weather patterns, pests, and diseases, all of which can severely affect crop health, farmers’ profits, and food security. Depending on the geography, some farmers deal with drought, while others struggle with floods, and in many cases, both extreme events can occur in the same growing season.
 
-#### API Keys
+Solution
+Geospora aims to solve these challenges by providing a powerful yet user-friendly platform where farmers can:
 
-Please create a Google Maps API Key at https://console.cloud.google.com/, and ensure that the services below are enabled.
+Explore and Visualize NASA Data: The platform offers easy access to various NASA datasets relevant to water, climate, soil moisture, and vegetation health.
+Analyze Crop & Water Trends: Using geospatial analysis tools, farmers can understand the current water conditions in their region, assess potential drought or flood risks, and plan accordingly.
+Predict & Plan: With predictive insights derived from NASA data, farmers can take preemptive action to protect their crops from extreme weather events, pests, or diseases.
+Key Features
+Data Exploration: Interactive tools that allow farmers to explore relevant datasets specific to their region.
+Custom Analysis: Tailor data analysis to track trends such as precipitation, soil moisture, or vegetation health.
+Alerts & Predictions: Notifications and predictive tools to warn farmers of potential weather-related risks like droughts or floods.
+Visualization: Easy-to-understand graphs, heatmaps, and other visual tools to make data accessible for non-experts.
+Mobile-Friendly: Ensuring accessibility for farmers even in remote areas using mobile devices.
+Impact
+Geospora will help:
 
-- Maps JavaScript API
-- Places API
-- Geocoding API
+Increase Crop Resilience: By providing farmers with timely data to mitigate water-related risks, improving overall crop health.
+Enhance Food Security: Through better planning and management, Geospora can play a pivotal role in maintaining stable food production despite climate challenges.
+Boost Farmers' Profits: With data insights, farmers can optimize their farming practices, reduce crop loss, and maximize profits.
+Technology Stack
+Geospora utilizes a robust and scalable tech stack to ensure the platform is efficient, accessible, and reliable for all users:
 
-Also create a OpenWeatherMap API key at https://openweathermap.org/api.
+Front-end: React.js for a seamless and responsive user interface.
+Back-end: Node.js, Express and APIs for handling requests and data processing.
+Data Storage: Firebase and integration with NASA’s API for real-time data access.
+Visualization Tools: D3.js and Leaflet.js for interactive data maps and charts.
+Predictive Modeling: Python-based machine learning models for predictions and trend analysis.
+Team
+The Geospora platform was developed by a dedicated and passionate team:
 
-These API keys must be in the environment variables `REACT_APP_GOOGLE_PLACES_API_KEY` and `REACT_APP_OPENWEATHER_API_KEY`.
-
-#### Usage
-
-After creating the API keys and placing them into a .env.local file in the root folder, to start the app type **npm install** in a terminal window to install the project dependencies, then type **npm start** and a browser window will open, but please note that you need to install [node.js](https://nodejs.org/en/) first.
-
-When the app is loaded for the first time the google maps is displayed by default, to get the weather for a particular location there are two options: either click on the google maps to select a location or start typing in the search bar and the suggestions will start appearing. Once a location is selected the page will render the weather data, showing the location name, the current time at that location, weather condition, temperature, feels like and hourly forecast for the next six hours. There's also a button to switch the units between Celsius and Fahrenheit.  
-To search for a new location, simply start typing in the search bar and select a result or click the map icon at the top left corner to display google maps and click on a location. To get the weather for your current location, click the compass icon at the top right corner and allow the browser to detect your location.
-
-#### Files
-
-- **public/**  
-  Contains all images used to change the background dinamically, and also the icons for the map and locate button as well as the rain icon.
-
-- **src/App.js**
-
-  This is the main file, which contains all the logic used to fetch and display weather and google maps data to the page. It starts by importing all required packages, and then defining the components.
-
-  - **App**
-    The main component, which is used to render all the other components. All the functions required to render the Google Maps are defined here, as well as the functions to handle input from the user. The functions to call the weather API are also defined here.
-    The first components to be rendered are the map icon, the search bar and the current location button.
-    Using a ternary operator, we check if weather data was fetched and the google maps is being shown to either render the google maps or the weather data.
-
-  - **components/MapButton**
-    Component used to render the map icon at the top left corner. When clicked it shows/hide the map.
-
-  - **components/Search**
-    Component used to render the suggestions as you type in the search bar, powered by google places API. As soon as a location is clicked from the drop down list the weather API is called to render weather data.
-
-  - **components/Locate**
-    Used to get the user's current position and display the weather data.
-
-  - **components/ShowWeather**
-    All the components needed to show the weather are defined here. From the OpenWeatherMap API we get all the information needed, such as current temperature, time zone, weather condition, hourly forecast, etc. To get the current time for the location being fetched was a bit of a challenge. The **GetTime** component is responsible for doing that, using the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) object, which enables language-sensitive date and time formatting.  
-    The **SwitchUnit** component is responsible for rendering the button used to switch between Celsius and Fahrenheit.
-    And finally, the **HourlyForecast** component is used to render the hourly forecast for the next 6 hours. This one was a lot harder than I expected to finish, because I needed to add one hour to the current time of the current location and then two hours and so on up to six hours. Thankfully, I found the [date-fns](https://date-fns.org/docs/Getting-Started) package which does exactly that via a add function taking two arguments: the time and the number of hours to be added to it. The new time is then formatted with the Intl.DateTimeFormat object to the time zone from the current location.
-
-- **src/index.css**
-  This is the css file used to display things nicely to the screen. The main challenge I had was to get the switch units button to look like a on/off toggle.
-  The background image also changes based on the current weather condition using css.
-
-- **src/index.js**
-  File created by React and is used to import the other files.
-
-- **src/mapStyles.js**
-  File used to add custom map styles to google maps. The style used for this app was taken from [Snazzy Maps](https://snazzymaps.com/style/1243/xxxxxxxxxxx).
+Ahsan Saleem: Lead Developer
+Colin Jimmy: Data Analyst & Visualization Expert
+Shradda Sasikumar: Geospatial Analyst
+Nakshathra Roice: UX/UI Designer
+Amal Joseph: Backend Developer
+Madhav K: Project Manager
+Together, the team has combined expertise in web development, geospatial analysis, data science, and user-centered design to build Geospora as a transformative tool for modern agriculture.

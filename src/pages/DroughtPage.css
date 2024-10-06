@@ -1,0 +1,28 @@
+.drought-page {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2 {
+    color: #2e7d32; /* Dark Green color for headings */
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  video {
+    margin: 20px 0;
+    display: block;
+  }

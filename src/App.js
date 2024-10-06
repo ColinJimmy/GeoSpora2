@@ -9,6 +9,7 @@ import mapStyles from "./mapStyles";
 import FloatingHydroponics from './pages/FloatingHydroponics'; // Your hydroponics component
 import About from './pages/About';
 import HelpPage from "./pages/HelpPage";
+import DroughtPage from "./pages/DroughtPage";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -55,7 +56,7 @@ const App = () => {
 
   const getWeather = useCallback(({ lat, lng }) => {
     // Construct the Weatherstack API URL
-    const weatherURL = `http://api.weatherstack.com/current?access_key=d57c8f2a9f5b53f458717fd3d71b7a2e&query=${lat},${lng}`;
+    const weatherURL = `https://api.weatherstack.com/current?access_key=d57c8f2a9f5b53f458717fd3d71b7a2e&query=${lat},${lng}`;
 
     fetch(weatherURL)
         .then((res) => res.json())
@@ -97,6 +98,7 @@ const App = () => {
   const [showHydroponics, setShowHydroponics] = useState(false);
   const [showAbout, setShowAbout]= useState(false);
   const [showHelp, setShowHelp]= useState(false);
+  const [showDrought, setShowDrought]= useState(false);
 
   // const onFloodClick = () => {
   //   setShowHydroponics(true); // Show the FloatingHydroponics component
@@ -126,6 +128,7 @@ const handleAboutClick = () => {
 
   const handleDroughtClick = () => {
     console.log("Drought button clicked");
+    setShowDrought(true);
     // Add your logic for drought here
   };
 
@@ -151,6 +154,7 @@ const handleAboutClick = () => {
       {showHydroponics && <FloatingHydroponics />}
       {showAbout && <About />}
       {showHelp && <HelpPage/>}
+      {showDrought && <DroughtPage/>}
 
       {/* Map and weather components */}
       <MapButton toggleMap={toggleMap} />
