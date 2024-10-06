@@ -55,19 +55,33 @@ const App = () => {
 
   const getWeather = useCallback(({ lat, lng }) => {
     // Construct the Weatherstack API URL
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${OPENWEATHER_API_KEY}&units=metric`;
+    const weatherURL = `http://api.weatherstack.com/current?access_key=d57c8f2a9f5b53f458717fd3d71b7a2e&query=${lat},${lng}`;
 
     fetch(weatherURL)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.cod === 200) {
-          setWeather(data); // Set weather data if successful
-        } else {
-          console.error("Weather not found:", data.message); // Handle errors
-        }
-      })
-      .catch((error) => console.error("Error fetching weather:", error));
-  }, []);
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.success !== false) {
+                // Extract relevant data from the response
+                const weatherData = {
+                    location: data.location.name,
+                    temperature: data.current.temperature,
+                    windSpeed: data.current.wind_speed,
+                    humidity: data.current.humidity,
+                    pressure: data.current.pressure,
+                    observationTime: data.current.observation_time,
+                    weatherDescription: data.current.weather_descriptions[0],
+                    weatherIcon: data.current.weather_icons[0],
+                    localTime: data.location.localtime,
+                };
+
+                setWeather(weatherData);
+            } else {
+                console.error("Weather not found:", data.error.info); // Handle errors
+            }
+        })
+        .catch((error) => console.error("Error fetching weather:", error));
+}, []);
+
 
   const onMapClick = useCallback((e) => {
     const lat = e.latLng.lat();
