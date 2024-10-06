@@ -1,0 +1,48 @@
+/* ShowWeather.css */
+.weather-window {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the component */
+    margin: 20px auto; /* Center the component */
+    max-width: 400px; /* Max width for the component */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center; /* Center-align text */
+  }
+  
+  .weather-window h2 {
+    font-size: 24px; /* Font size for location */
+    color: #333; /* Dark text color */
+  }
+  
+  .weather-window h3 {
+    font-size: 20px; /* Font size for weather description */
+    color: #555; /* Medium text color */
+  }
+  
+  .weather-window h4,
+  .weather-window h5 {
+    font-size: 16px; /* Font size for temperature, humidity, etc. */
+    color: #666; /* Lighter text color */
+  }
+  
+  .weather-window img {
+    width: 100px; /* Image width */
+    height: auto; /* Auto height */
+    margin: 10px 0; /* Margin for spacing */
+  }
+  
+  .weather-window button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  .weather-window button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

@@ -9,6 +9,13 @@ body {
   font-family: "Roboto", "Cantarell", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000; /* Black background */
+  color: #00FF00; /* Green text */
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, li {
+  color: #00FF00; /* Green text for all headings, paragraphs, links, etc. */
 }
 
 .toggle-map {
@@ -28,7 +35,7 @@ body {
 .search {
   position: absolute;
   top: 1rem;
-  left: 50%;
+  left: 55%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 400px;
@@ -279,4 +286,25 @@ input:checked + .slider:before {
 .weather-box .hourly-forecast .hour-forecast .pop .rain-icon {
   width: 25px;
   height: 25px;
+}
+
+button {
+  background-color: #00FF00; /* Green button background */
+  color: #000000; /* Black button text */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #009900; /* Darker green on hover */
+  transition: background-color 0.3s;
+}
+
+a {
+  color: #00FF00;
+}
+
+a:hover {
+  color: #009900; /* Darker green on hover */
 }
